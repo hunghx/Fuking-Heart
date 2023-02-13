@@ -1,0 +1,122 @@
+body {
+  text-align: center;
+}
+.heart {
+  display: none;
+  position: relative;
+  width: 200px;
+  height: 200px;
+  margin: 50px auto;
+  -webkit-transform: rotate(45deg);
+  -moz-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  -o-transform: rotate(45deg);
+  transform: rotate(45deg);
+}
+.img {
+  position: relative;
+  width: 500px;
+  height: 300px;
+  background-image: url("https://i.ytimg.com/vi/Ul7OJi00uWs/maxresdefault.jpg");
+  background-size: cover;
+  background-position: -33px 0px;
+  margin: 0 auto;
+}
+.img::before {
+  position: absolute;
+  content: "Ấn đi con chó :)))";
+  color: white;
+  padding: 5px 10px;
+  border-radius: 5px;
+  background-color: crimson;
+  opacity: 0.8;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.text {
+  position: absolute;
+  bottom: 30%;
+  left: 46%;
+  color: white;
+  -webkit-transform: rotate(-45deg);
+  -moz-transform: rotate(-45deg);
+  -ms-transform: rotate(-45deg);
+  -o-transform: rotate(-45deg);
+  transform: rotate(-45deg);
+}
+.beat:before {
+  position: absolute; /* vị trí phụ thuộc vào parent position */
+  width: 100px;
+  height: 100px;
+  content: ""; /* khởi tạo rỗng cho thẻ giả */
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  -o-border-radius: 50%;
+  border-radius: 50%; /* bo tròn 4 góc của div để tạo hình tròn */
+  background-color: crimson;
+  bottom: 0px;
+  left: -50px; /* vì div parent rộng 200px nên di chuyển before sang trái 100px để tâm before nằm trên cạnh dọc của div parent */
+}
+
+.beat {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 100px;
+  height: 100px;
+  background-color: crimson;
+  animation: beat 1s ease-in-out infinite;
+  -webkit-filter: blur(1px);
+}
+.beat:after {
+  position: absolute;
+  width: 100px;
+  height: 100px;
+  content: "";
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  -o-border-radius: 50%;
+  border-radius: 50%;
+  background-color: crimson;
+  top: -50px;
+  right: 0px;
+}
+.btn {
+  margin-top: 30px;
+  box-sizing: border-box;
+  padding: 10px 30px;
+  border-radius: 5px;
+  border: 1px solid wheat;
+  background-color: crimson;
+  color: white;
+  cursor: pointer;
+}
+.btn:hover {
+  background-color: black;
+  opacity: 0.8;
+}
+
+@keyframes beat {
+  0% {
+    transform: scale(1);
+  }
+  14% {
+    transform: scale(1.3);
+  }
+  28% {
+    transform: scale(1);
+  }
+}
+
+.beat-1 {
+  animation-delay: 0s;
+}
+
+.beat-2 {
+  animation-delay: 0.3s;
+}
+
+.beat-3 {
+  animation-delay: 0.6s;
+}
